@@ -29,6 +29,8 @@ async def update_snowboard(snowboard_id: int, new_snowboard: Snowboard):
         if snowboard.id == snowboard_id:
             snowboards[i] = new_snowboard
             return
+    snowboards.append(new_snowboard)
+    return
         
 @app.delete("/snowboard/{snowboard_id}")
 async def delete_snowboard(snowboard_id: int):
